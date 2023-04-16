@@ -2,6 +2,8 @@
 
 The SSODViz application is an open-source tool designed to verify predicted annotations for semi-supervised object detection visually. The main focus is a simple and intuitive design that makes the process of manual confirmation of predicted labels as easy and fast as possible.
 
+For demonstration purposes we are using a subsample of the images and annotations of the [PubLayNet dataset](https://github.com/ibm-aur-nlp/PubLayNet).
+
 ![Preview GIF](other/preview.gif)
 
 # Run the application
