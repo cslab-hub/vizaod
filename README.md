@@ -1,6 +1,6 @@
 # SSODViz - Visual Annotation Verification for Semi-Supervised Object Detection
 
-This application is designed to verify predicted annotations for semi-supervised object detection visually. The main focus is on a simple and intuitive design that makes the process of manual confirmation of predicted labels as easy and fast as possible.
+The SSODViz application is an open-source tool designed to verify predicted annotations for semi-supervised object detection visually. The main focus is a simple and intuitive design that makes the process of manual confirmation of predicted labels as easy and fast as possible.
 
 ![Preview GIF](other/preview.gif)
 
@@ -14,11 +14,14 @@ Since this application is intended to be used as a verification tool for semi-su
 
 
 
-Note that this application uses a specific CSV format for the annotations. Therefore, it comes with a conversion tool that can convert the common [COCO JSON](https://cocodataset.org/#format-data) into [the CSV format used by this application](#conversion-from-coco-json-to-csv).
+Note that this application uses a specific CSV format for the annotations. Therefore, it comes with a conversion tool that can convert the common [COCO JSON](https://cocodataset.org/#format-data) format into [the CSV format used by this application](#conversion-from-coco-json-to-csv).
 
 ## Configuration
 
 You can set the required paths in the "Configuration" card in the application. Please make sure to either set the paths relative to the directory from where you execute the app or provide absolute paths.
+
+![Configuration PNG](other/configuration.png)
+
 - "PATH_IMAGES" should contain the path to the images you use.
 - "PATH_ANNOTATIONS" should contain the path to the CSV file containing the annotations you want to approve/discard.
 - "PATH_APPROVED" should contain the path to the CSV file where the approved annotations get stored.
