@@ -311,14 +311,18 @@ if __name__ == "__main__":
                         dbc.Col(dcc.Input(id="input_path_csv", value="demo/conversion/annotations.csv", style={"width": "100%"}), md=9)
                     ], style={"margin-bottom": "10px"}),
                     dbc.Row([
-                        dbc.Button(dbc.Spinner("Generate CSV", id="spinner_generate_csv"), id="button_generate_csv", className="me-1", outline=True, color="primary", style={"width": "100%"}),
-                    ])
+                        dbc.Button(dbc.Spinner("Generate CSV", id="spinner_conversion"), id="button_conversion", className="me-1", outline=True, color="primary", style={"width": "100%"}),
+                    ]),
+                    dcc.ConfirmDialog(
+                        id="confirm_conversion",
+                        message="Do you really want to convert the annotations? This will overwrite the CSV file if it already exists!"
+                    )
                 ], fluid=True, style={"padding": "10px"})
             ])
         ], id="modal_conversion", is_open=False, size="lg"),
         dcc.ConfirmDialog(
             id="confirm_start",
-            message="Do you really want to start? You might lose your previous progress if you haven't saved it before!"
+            message="Do you really want to start?"
         ),
         dcc.ConfirmDialog(
             id="confirm_save",
@@ -448,15 +452,23 @@ if __name__ == "__main__":
         return is_open
 
     @app.callback(
-        Output("spinner_generate_csv", "children"),
-        Input("button_generate_csv", "n_clicks"),
+        Output("confirm_conversion", "displayed"),
+        Input("button_conversion", "n_clicks"),
+        prevent_initial_call=True
+    )
+    def cb_display_confirm_conversion(n_clicks):
+        return True
+
+    @app.callback(
+        Output("spinner_conversion", "children"),
+        Input("confirm_conversion", "submit_n_clicks"),
         [
             State("input_path_json", "value"),
             State("input_path_csv", "value")
         ],
         prevent_initial_call=True
     )
-    def generate_csv(n_clicks, input_path_json, input_path_csv):
+    def conversion(n_clicks, input_path_json, input_path_csv):
         df = convert_to_csv.convert_coco_json_to_csv(input_path_json)
         df.to_csv(input_path_csv, sep="|", index=False)
         return no_update
@@ -628,5 +640,5 @@ if __name__ == "__main__":
 
 
     # Run the app
-    app.run_server(debug=True)
+    app.run_server(debug=False)
 

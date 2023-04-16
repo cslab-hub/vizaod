@@ -18,6 +18,8 @@ Afterward, you can run the application by executing the command:
 python3 app.py
 ```
 
+By default, the app will run on http://127.0.0.1:8050/. Open this address in your browser.
+
 # Workflow
 
 Since this application is intended to be used as a verification tool for semi-supervised object detection, we assume that you want to verify the annotations that your model predicted. The usual workflow for this would be:
