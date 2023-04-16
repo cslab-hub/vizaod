@@ -4,11 +4,7 @@ The SSODViz application is an open-source tool designed to verify predicted anno
 
 ![Preview GIF](other/preview.gif)
 
-# Workflow
-
-The following sections describe the intended workflow for the SSODViz application.
-
-## Run the application
+# Run the application
 
 Before you start the application, make sure to install the required Python libraries by running the command:
 
@@ -22,13 +18,21 @@ Afterward, you can run the application by executing the command:
 python3 app.py
 ```
 
+# Workflow
+
+The following sections describe the intended workflow for the SSODViz application.
+
 ## General
 
-Since this application is intended to be used as a verification tool for semi-supervised object detection, we assume that you want to verify the annotations that your model predicted.
+Since this application is intended to be used as a verification tool for semi-supervised object detection, we assume that you want to verify the annotations that your model predicted. The usual workflow for this would be:
 
+1. Train your model on an already labeled subset of the data.
+2. Predict annotations for a subset of the unlabeled data.
+3. Approve/discard your model's predictions, 'moving' the approved annotations into your labeled dataset.
+4. Train the model on the labeled dataset containing the initial annotations and approved predictions.
+5. Go to step 2 until you have labeled enough data.
 
-
-Note that this application uses a specific CSV format for the annotations. Therefore, it comes with a conversion tool that can convert the common [COCO JSON](https://cocodataset.org/#format-data) format into [the CSV format used by this application](#conversion-from-coco-json-to-csv).
+Note that this application uses a specific CSV format for the annotations. Therefore, it comes with a [conversion](#conversion-from-coco-json-to-csv) tool that can convert the common [COCO JSON](https://cocodataset.org/#format-data) format into the CSV format used by this application.
 
 ## Configuration
 
@@ -45,7 +49,7 @@ You can set the required paths in the "Configuration" card in the application. P
 
 ## Conversion from COCO JSON to CSV
 
-Since the SSODViz application uses a unique annotation format captured in CSV files, it comes with a script that can convert the common COCO JSON format into the CSV format this application is using. Our CSV annotations follow the structure below:
+Since the SSODViz application uses a unique annotation format captured in CSV files, it comes with a script that can convert the common [COCO JSON](https://cocodataset.org/#format-data) format into the CSV format this application is using. Our CSV annotations follow the structure below:
 
 | CSV column        | Meaning                                   |
 | ----------------- | ----------------------------------------- |
@@ -67,17 +71,17 @@ Since the SSODViz application uses a unique annotation format captured in CSV fi
 | segmentation      | Segmentation of the annotation            |
 | segmentation_area | Segmentation area of the annotation       |
 
-You can either convert your COCO JSON annotations using the SSODViz application or the file *convert_to_csv.py* as a standalone script.
+You can either convert the annotations using the SSODViz application or the file *convert_to_csv.py* as a standalone script.
 
 ### Conversion using the SSODViz application
 
-You can use the "Convert Annotations" button in the navigation bar of the SSODViz application to convert your COCO JSON annotations to the CSV format the application needs.
+You can use the "Convert Annotations" button in the navigation bar of the SSODViz application to convert your [COCO JSON](https://cocodataset.org/#format-data) annotations to the CSV format the application needs.
 
 ![Conversion GIF](other/conversion.gif)
 
 ### Conversion using the *convert_to_csv.py* script
 
-You can also use the *convert_to_csv.py* script to convert your COCO JSON annotations.
+You can also use the *convert_to_csv.py* script to convert your [COCO JSON](https://cocodataset.org/#format-data) annotations.
 
 Example usage:
 ```
