@@ -117,9 +117,9 @@ def image_figure(image_name):
 
 def check_status(image_name):
     global APPROVED, DISCARDED
-    if image_name in APPROVED["image_name"].values:
+    if image_name in APPROVED["image_name"].values or "approved" in PATH_ANNOTATIONS:
         return ["Approved", "success"]
-    elif image_name in DISCARDED["image_name"].values:
+    elif image_name in DISCARDED["image_name"].values or "discarded" in PATH_ANNOTATIONS:
         return ["Discarded", "danger"]
     return ["Not analysed", "secondary"]
 
@@ -561,12 +561,11 @@ if __name__ == "__main__":
             color = tuple([x * 255 for x in to_rgba(color, alpha=0.5 / 255)])
             table_colors[category] = f"rgba{color}"
 
-        # TODO: FIX BUG WHEN DATAFRAME DOES NOT CONTAIN ALL CATEGORIES
         style_data_conditional = []
-        for i in range(len(TABLE_COLS)):
+        for category in CATEGORIES:
             style_data_conditional.append({
-                "if": {"filter_query": f"{{category}} = {CATEGORIES[i]}"},
-                "backgroundColor": table_colors[CATEGORIES[i]]
+                "if": {"filter_query": f"{{category}} = {category}"},
+                "backgroundColor": table_colors[category]
             })
         
         INITIALIZED = True
@@ -629,5 +628,5 @@ if __name__ == "__main__":
 
 
     # Run the app
-    app.run_server(debug=False)
+    app.run_server(debug=True)
 
