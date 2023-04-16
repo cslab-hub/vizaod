@@ -298,7 +298,7 @@ if __name__ == "__main__":
                         )
                     ]),
                     dbc.Row(
-                        "Here you can convert a JSON file containing the annotations for your dataset into a CSV file with the format we are using for this application. Note that only the conversion from the JSON COCO format is currently supported.",
+                        "Here you can convert a JSON file containing the annotations for your dataset into a CSV file with the format we are using for this application. Note that only the conversion from the COCO JSON format is currently supported.",
                         style={"margin-bottom": "20px", "margin-top": "0px"}
                     ),
                     html.Hr(),
