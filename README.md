@@ -2,6 +2,8 @@
 
 This application is designed to verify predicted annotations for semi-supervised object detection visually. The main focus is on a simple and intuitive design that makes the process of manual confirmation of predicted labels as easy and fast as possible.
 
+![Preview GIF](other/preview.gif)
+
 # Workflow
 
 The following sections describe the intended workflow.
@@ -16,7 +18,7 @@ You can either convert your COCO JSON annotations using the SSODViz application 
 
 You can use the "Convert Annotations" button in the navigation bar of the SSODViz application to convert your COCO JSON annotations to the CSV format the application needs.
 
-<img src="other/conversion.gif">
+![Conversion GIF](other/conversion.gif)
 
 ### Conversion using the *convert_to_csv.py* script
 
