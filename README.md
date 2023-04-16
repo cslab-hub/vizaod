@@ -32,16 +32,20 @@ Note that this application uses a specific CSV format for the annotations. There
 
 ## Configuration
 
-You can set the required paths in the "Configuration" card in the application. Please make sure to either set the paths relative to the directory from where you execute the app or provide absolute paths.
+You can set the required paths in the **Configuration** card in the application. Please make sure to either set the paths relative to the directory from where you execute the app or provide absolute paths.
 
 ![Configuration PNG](other/configuration.png)
 
-- "PATH_IMAGES" should contain the path to the images you use.
-- "PATH_ANNOTATIONS" should contain the path to the CSV file containing the annotations you want to approve/discard.
-- "PATH_APPROVED" should contain the path to the CSV file where the approved annotations get stored.
-- "PATH_DISCARDED" should contain the path to the CSV file where the discarded annotations get stored.
+- **PATH_IMAGES** should contain the path to the images you use. This path should contain both the labeled and unlabeled images.
+- **PATH_ANNOTATIONS** should contain the path to the CSV file containing the annotations you want to approve/discard.
+- **PATH_APPROVED** should contain the path to the CSV file where the approved annotations get stored.
+- **PATH_DISCARDED** should contain the path to the CSV file where the discarded annotations get stored.
 
 ## Approving / discarding the predicted annotations
+
+Start verifying your model's predictions by clicking on the **Start** button in the **Configuration** card. You can now approve or discard the model's predicted annotations by clicking on the buttons **Approve** / **Discard**. The approved and discarded annotations will automatically be stored in the CSV files given by the paths **PATH_APPROVED** and **PATH_DISCARDED**. If these files already exist, they will be loaded, allowing you to continue/review your previous progress.
+
+![Preview GIF](other/preview.gif)
 
 ## Conversion from COCO JSON to CSV
 
@@ -67,17 +71,17 @@ Since the SSODViz application uses a unique annotation format captured in CSV fi
 | segmentation      | Segmentation of the annotation            |
 | segmentation_area | Segmentation area of the annotation       |
 
-You can either convert the annotations using the SSODViz application or the file *convert_to_csv.py* as a standalone script.
+You can either convert the annotations using the SSODViz application or the file **convert_to_csv.py** as a standalone script.
 
 ### Conversion using the SSODViz application
 
-You can use the "Convert Annotations" button in the navigation bar of the SSODViz application to convert your [COCO JSON](https://cocodataset.org/#format-data) annotations to the CSV format the application needs.
+You can use the **Convert Annotations** button in the navigation bar of the SSODViz application to convert your [COCO JSON](https://cocodataset.org/#format-data) annotations to the CSV format the application needs.
 
 ![Conversion GIF](other/conversion.gif)
 
-### Conversion using the *convert_to_csv.py* script
+### Conversion using the **convert_to_csv.py** script
 
-You can also use the *convert_to_csv.py* script to convert your [COCO JSON](https://cocodataset.org/#format-data) annotations.
+You can also use the **convert_to_csv.py** script to convert your [COCO JSON](https://cocodataset.org/#format-data) annotations.
 
 Example usage:
 ```
