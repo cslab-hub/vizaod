@@ -170,7 +170,7 @@ if __name__ == "__main__":
                             alt="Link to the GitHub repository containing the source code ...",
                             height="40px"
                         ),
-                        href="https://github.com/dmassanes/ssodviz"
+                        href="https://github.com/cslab-hub/ssodviz"
                     )
                 ),
                 dbc.Col(
@@ -304,11 +304,11 @@ if __name__ == "__main__":
                     html.Hr(),
                     dbc.Row([
                         dbc.Col("Path to JSON file", md=3),
-                        dbc.Col(dcc.Input(id="input_path_json", value="demo/conversion/val.json", style={"width": "100%"}), md=9)
+                        dbc.Col(dcc.Input(id="input_path_json", value="demo/conversion/annotations.json", style={"width": "100%"}), md=9)
                     ]),
                     dbc.Row([
                         dbc.Col("Path to CSV file", md=3),
-                        dbc.Col(dcc.Input(id="input_path_csv", value="demo/conversion/val.csv", style={"width": "100%"}), md=9)
+                        dbc.Col(dcc.Input(id="input_path_csv", value="demo/conversion/annotations.csv", style={"width": "100%"}), md=9)
                     ], style={"margin-bottom": "10px"}),
                     dbc.Row([
                         dbc.Button(dbc.Spinner("Generate CSV", id="spinner_generate_csv"), id="button_generate_csv", className="me-1", outline=True, color="primary", style={"width": "100%"}),
