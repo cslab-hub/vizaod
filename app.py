@@ -629,5 +629,5 @@ if __name__ == "__main__":
 
 
     # Run the app
-    app.run_server(debug=True)
+    app.run_server(debug=False)
 

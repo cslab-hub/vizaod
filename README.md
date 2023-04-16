@@ -33,7 +33,7 @@ Usage:
 ```
 usage: convert_to_csv.py [-h] -i INPUT_JSON_FILE [-o OUTPUT_CSV_FILE]
 
-JSON to CSV annotation file converter for the COCO MS annotation format.
+JSON to CSV annotation file converter for the COCO annotation format.
 
 optional arguments:
   -h, --help            show this help message and exit

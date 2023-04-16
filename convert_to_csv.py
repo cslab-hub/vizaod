@@ -115,7 +115,7 @@ def convert_coco_json_to_csv(input_json_file, tqdm_progress_bar=False):
 if __name__ == "__main__":
     
     # Parse and check the input arguments
-    parser = argparse.ArgumentParser(description="JSON to CSV annotation file converter for the COCO MS annotation format.")
+    parser = argparse.ArgumentParser(description="JSON to CSV annotation file converter for the COCO annotation format.")
     parser.add_argument("-i", "--input-json-file", dest="input_json_file", type=str, help="Input JSON file.", required=True)
     parser.add_argument("-o", "--output-csv-file", dest="output_csv_file", type=str, help="Output CSV file. Defaults to the " + \
                             "name of the input JSON file (with .csv extension instead of .json)", required=False)
