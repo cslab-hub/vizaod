@@ -8,9 +8,39 @@ This application is designed to verify predicted annotations for semi-supervised
 
 The following sections describe the intended workflow.
 
+## General
+
+Since the application is intended to be used as a verification tool for semi-supervised object detection we assume that you 
+
+## Configuration
+
+You can set the required paths in the "Configuration" card in the application. Please make sure to either set the paths relative to the directory from where you execute the app or provide absolute paths.
+- "PATH_IMAGES" should contain the path to the images you use.
+- "PATH_ANNOTATIONS" should contain the path to the CSV file containing the annotations you want to approve/discard.
+- "PATH_APPROVED" should contain the path to the CSV file where the approved annotations get stored.
+- "PATH_DISCARDED" should contain the path to the CSV file where the discarded annotations get stored.
+
 ## Conversion from COCO JSON to CSV
 
-Since the SSODViz application uses a unique annotation format captured in CSV files, it comes with a script that can convert the common COCO JSON format into the CSV format this application is using.
+Since the SSODViz application uses a unique annotation format captured in CSV files, it comes with a script that can convert the common COCO JSON format into the CSV format this application is using. Our CSV annotations follow the structure below:
+
+- image_name: File name of the image.
+- image_id: ID of the image.
+- image_width: Width of the image.
+- image_height: Height of the image.
+- annotation_id: ID of the annotation.
+- category: Category of the annotation.
+- category_id: Category ID of the annotation.
+- iscrowd: Similar to "iscrowd" in COCO JSON.
+- bbox_xmin: X-min of the annotations' bounding box.
+- bbox_ymin: Y-min of the annotations' bounding box.
+- bbox_xmax: X-max of the annotations' bounding box.
+- bbox_ymax: Y-max of the annotations' bounding box.
+- bbox_width: Width of the annotations' bounding box.
+- bbox_height: Height of the annotations' bounding box.
+- bbox_area: Area of the annotations' bounding box.
+- segmentation: Segmentation of the annotation.
+- segmentation_area: Segmentation area of the annotation.
 
 You can either convert your COCO JSON annotations using the SSODViz application or the file *convert_to_csv.py* as a standalone script.
 
