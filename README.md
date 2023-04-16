@@ -20,17 +20,13 @@ python3 app.py
 
 # Workflow
 
-The following sections describe the intended workflow for the SSODViz application.
-
-## General
-
 Since this application is intended to be used as a verification tool for semi-supervised object detection, we assume that you want to verify the annotations that your model predicted. The usual workflow for this would be:
 
 1. Train your model on an already labeled subset of the data.
 2. Predict annotations for a subset of the unlabeled data.
-3. Approve/discard your model's predictions, 'moving' the approved annotations into your labeled dataset.
+3. Approve/discard your model's predictions using this application, 'moving' the approved annotations into your labeled dataset.
 4. Train the model on the labeled dataset containing the initial annotations and approved predictions.
-5. Go to step 2 until you have labeled enough data.
+5. Start again with step 2 until you have labeled enough data.
 
 Note that this application uses a specific CSV format for the annotations. Therefore, it comes with a [conversion](#conversion-from-coco-json-to-csv) tool that can convert the common [COCO JSON](https://cocodataset.org/#format-data) format into the CSV format used by this application.
 
