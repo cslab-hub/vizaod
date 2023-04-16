@@ -8,6 +8,20 @@ The SSODViz application is an open-source tool designed to verify predicted anno
 
 The following sections describe the intended workflow for the SSODViz application.
 
+## Run the application
+
+Before you start the application, make sure to install the required Python libraries by running the command:
+
+```
+pip install -r requirements.txt
+```
+
+Afterward, you can run the application by executing the command:
+
+```
+python3 app.py
+```
+
 ## General
 
 Since this application is intended to be used as a verification tool for semi-supervised object detection, we assume that you want to verify the annotations that your model predicted.
