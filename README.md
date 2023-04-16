@@ -6,11 +6,15 @@ This application is designed to verify predicted annotations for semi-supervised
 
 # Workflow
 
-The following sections describe the intended workflow.
+The following sections describe the intended workflow for the SSODViz application.
 
 ## General
 
-Since the application is intended to be used as a verification tool for semi-supervised object detection we assume that you 
+Since this application is intended to be used as a verification tool for semi-supervised object detection, we assume that you want to verify the annotations that your model predicted.
+
+
+
+Note that this application uses a specific CSV format for the annotations. Therefore, it comes with a conversion tool that can convert the common [COCO JSON](https://cocodataset.org/#format-data) into [the CSV format used by this application](#conversion-from-coco-json-to-csv).
 
 ## Configuration
 
@@ -19,6 +23,8 @@ You can set the required paths in the "Configuration" card in the application. P
 - "PATH_ANNOTATIONS" should contain the path to the CSV file containing the annotations you want to approve/discard.
 - "PATH_APPROVED" should contain the path to the CSV file where the approved annotations get stored.
 - "PATH_DISCARDED" should contain the path to the CSV file where the discarded annotations get stored.
+
+## Approving / discarding the predicted annotations
 
 ## Conversion from COCO JSON to CSV
 
@@ -43,25 +49,6 @@ Since the SSODViz application uses a unique annotation format captured in CSV fi
 | bbox_area         | Area of the annotations' bounding box     | 
 | segmentation      | Segmentation of the annotation            |
 | segmentation_area | Segmentation area of the annotation       |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 You can either convert your COCO JSON annotations using the SSODViz application or the file *convert_to_csv.py* as a standalone script.
 
@@ -93,11 +80,4 @@ optional arguments:
   -o OUTPUT_CSV_FILE, --output-csv-file OUTPUT_CSV_FILE
                         Output CSV file. Defaults to the name of the input JSON file (with .csv extension instead of .json)
 ```
-
-## Approving / discarding the predicted annotations
-
-
-
-
-
 
