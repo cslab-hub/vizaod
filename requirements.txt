@@ -1,0 +1,8 @@
+dash==2.9.2
+dash_bootstrap_components==1.2.1
+matplotlib==3.6.3
+opencv_python==4.6.0.66
+opencv_python_headless==4.6.0.66
+pandas==1.5.3
+plotly==5.10.0
+tqdm==4.64.0
