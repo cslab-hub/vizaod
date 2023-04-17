@@ -24,7 +24,7 @@ By default, the app will run on http://127.0.0.1:8050/. Open this address in you
 
 # Workflow
 
-Since this application is intended to be used as a verification tool for semi-supervised object detection, we assume that you want to verify the annotations that your model predicted. The usual workflow for this would be:
+Since this application is intended to be used as a verification tool for semi-supervised object detection, we assume that you want to verify the annotations that your model predicted. The workflow would
 
 1. Train your model on an already labeled subset of the data.
 2. Predict annotations for a subset of the unlabeled data.
@@ -32,7 +32,7 @@ Since this application is intended to be used as a verification tool for semi-su
 4. Train the model on the labeled dataset containing the initial annotations and approved predictions.
 5. Start again with step 2 until you have labeled enough data.
 
-![Worklflow SVG](other/workflow.svg)
+![Workflow SVG](other/workflow.svg)
 
 ## Configuration
 
