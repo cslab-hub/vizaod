@@ -32,7 +32,7 @@ Since this application is intended to be used as a verification tool for semi-su
 4. Train the model on the labeled dataset containing the initial annotations and approved predictions.
 5. Start again with step 2 until you have labeled enough data.
 
-Note that this application uses a specific CSV format for the annotations. Therefore, it comes with a [conversion](#conversion-from-coco-json-to-csv) tool that can convert the common [COCO JSON](https://cocodataset.org/#format-data) format into the CSV format used by this application.
+![Worklflow SVG](other/workflow.svg)
 
 ## Configuration
 
@@ -44,6 +44,8 @@ You can set the required paths in the **Configuration** card in the application.
 - **PATH_ANNOTATIONS** should contain the path to the CSV file containing the annotations you want to approve/discard.
 - **PATH_APPROVED** should contain the path to the CSV file where the approved annotations get stored.
 - **PATH_DISCARDED** should contain the path to the CSV file where the discarded annotations get stored.
+
+Note that this application uses a specific CSV format for the annotations. Therefore, it comes with a [conversion](#conversion-from-coco-json-to-csv) tool that can convert the common [COCO JSON](https://cocodataset.org/#format-data) format into the CSV format used by this application.
 
 ## Approving / discarding the predicted annotations
 
