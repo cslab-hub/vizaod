@@ -29,9 +29,9 @@ Since this application is intended to be used as a verification tool for semi-su
 1. Use the initial annotations for first model training *initial training step* -- constructing the initial object detection model.
 2. Predict annotations for a subset of the unlabeled images.
 3. Assessment of the predictions using the SSODViz tool.
-4. Adjudicating the results via a human-in-the-loop *Adjudicator*:
-    4a. Approving annotations, if those are correct.
-    4b. Discarding annotations, otherwise.
+4. Adjudicating the results via a human-in-the-loop *Adjudicator*: <br>
+4a. Approving annotations, if those are correct. <br>
+4b. Discarding annotations, otherwise.
 5. Merging all labeled data, i. e. initial annotations and approved annotations, into a new training set.
 6. Iterative model training, i. e. performing *further training steps*, for constructing object detection models incrementally.
 
