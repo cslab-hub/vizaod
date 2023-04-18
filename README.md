@@ -24,13 +24,16 @@ By default, the app will run on http://127.0.0.1:8050/. Open this address in you
 
 # Workflow
 
-Since this application is intended to be used as a verification tool for semi-supervised object detection, we assume that you want to verify the annotations that your model predicted. The workflow would
+Since this application is intended to be used as a verification tool for semi-supervised object detection, we assume that you want to verify the annotations that your model predicted in order to make use of approved/discarded annotations for further training steps and for evaluating your model. The workflow with SSODViz is depicted in the figure and description below.
 
-1. Train your model on an already labeled subset of the data.
-2. Predict annotations for a subset of the unlabeled data.
-3. Approve/discard your model's predictions using this application, 'moving' the approved annotations into your labeled dataset.
-4. Train the model on the labeled dataset containing the initial annotations and approved predictions.
-5. Start again with step 2 until you have labeled enough data.
+1. Use the initial annotations for first model training *initial training step* -- constructing the initial object detection model.
+2. Predict annotations for a subset of the unlabeled images.
+3. Assessment of the predictions using the SSODViz tool.
+4. Adjudicating the results via a human-in-the-loop *Adjudicator*:
+    4a. Approving annotations, if those are correct.
+    4b. Discarding annotations, otherwise.
+5. Merging all labeled data, i. e. initial annotations and approved annotations, into a new training set.
+6. Iterative model training, i. e. performing *further training steps*, for constructing object detection models incrementally.
 
 ![Workflow SVG](other/workflow.svg)
 
