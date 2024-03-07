@@ -1,6 +1,6 @@
 """
 
-    SSODViz - Visual Annotation Verification for Semi-Supervised Object Detection
+    VizAOD - Visually assisted Annotation verification and adjudication for Objective Detection
     
     This tool is intended to ease the process of manually reviewing
     predicted annotations for semi-supervised object detection, mainly
@@ -41,7 +41,7 @@ PATH_DISCARDED      = "demo/ssod/model/predictions_0_discarded.csv"
 
 # Constants & important variables
 COLORS      = px.colors.qualitative.Dark24
-APP_TITLE   = "SSODViz - Visual Annotation Verification for Semi-Supervised Object Detection"
+APP_TITLE   = "VizAOD - Visually assisted Annotation verification and adjudication for Objective Detection"
 
 TABLE_COLS  = ["category", "bbox_xmin", "bbox_ymin", "bbox_width", "bbox_height"]
 FIXED_FORMAT = Format(precision=3, scheme=Scheme.fixed)
@@ -170,7 +170,7 @@ if __name__ == "__main__":
                             alt="Link to the GitHub repository containing the source code ...",
                             height="40px"
                         ),
-                        href="https://github.com/cslab-hub/ssodviz"
+                        href="https://github.com/cslab-hub/vizaod"
                     )
                 ),
                 dbc.Col(

@@ -1,6 +1,6 @@
-# SSODViz - Visual Annotation Verification for Semi-Supervised Object Detection
+# VizAOD - Visually assisted Annotation verification and adjudication for Objective Detection
 
-The SSODViz application is an open-source tool designed to verify predicted annotations for semi-supervised object detection visually. The main focus is a simple and intuitive design that makes the process of manual confirmation of predicted labels as easy and fast as possible.
+The VizAOD application is an open-source tool designed to verify predicted annotations for semi-supervised object detection visually. The main focus is a simple and intuitive design that makes the process of manual confirmation of predicted labels as easy and fast as possible.
 
 For demonstration purposes, we are using a subsample of the images and annotations of the [PubLayNet dataset](https://github.com/ibm-aur-nlp/PubLayNet).
 
@@ -24,11 +24,11 @@ By default, the app will run on http://127.0.0.1:8050/. Open this address in you
 
 # Workflow
 
-Since this application is intended to be used as a verification tool for semi-supervised object detection, we assume that you want to verify the annotations that your model predicted in order to make use of approved/discarded annotations for further training steps and for evaluating your model. The workflow with SSODViz is depicted in the figure and description below.
+Since this application is intended to be used as a verification tool for semi-supervised object detection, we assume that you want to verify the annotations that your model predicted in order to make use of approved/discarded annotations for further training steps and for evaluating your model. The workflow with VizAOD is depicted in the figure and description below.
 
 1. Use the initial annotations for first model training *initial training step* -- constructing the initial object detection model.
 2. Predict annotations for a subset of the unlabeled images.
-3. Assessment of the predictions using the SSODViz tool.
+3. Assessment of the predictions using the VizAOD tool.
 4. Adjudicating the results via a human-in-the-loop *Adjudicator*: <br>
 4a. Approving annotations, if those are correct. <br>
 4b. Discarding annotations, otherwise.
@@ -58,7 +58,7 @@ Start verifying your model's predictions by clicking on the **Start** button in 
 
 ## Conversion from COCO JSON to CSV
 
-Since the SSODViz application uses a unique annotation format captured in CSV files, it comes with a script that can convert the common [COCO JSON](https://cocodataset.org/#format-data) format into the CSV format this application is using. Our CSV annotations follow the structure below:
+Since the VizAOD application uses a unique annotation format captured in CSV files, it comes with a script that can convert the common [COCO JSON](https://cocodataset.org/#format-data) format into the CSV format this application is using. Our CSV annotations follow the structure below:
 
 | CSV column        | Meaning                                   |
 | ----------------- | ----------------------------------------- |
@@ -80,11 +80,11 @@ Since the SSODViz application uses a unique annotation format captured in CSV fi
 | segmentation      | Segmentation of the annotation            |
 | segmentation_area | Segmentation area of the annotation       |
 
-You can either convert the annotations using the SSODViz application or the file **convert_to_csv.py** as a standalone script.
+You can either convert the annotations using the VizAOD application or the file **convert_to_csv.py** as a standalone script.
 
-### Conversion using the SSODViz application
+### Conversion using the VizAOD application
 
-You can use the **Convert Annotations** button in the navigation bar of the SSODViz application to convert your [COCO JSON](https://cocodataset.org/#format-data) annotations to the CSV format the application needs.
+You can use the **Convert Annotations** button in the navigation bar of the VizAOD application to convert your [COCO JSON](https://cocodataset.org/#format-data) annotations to the CSV format the application needs.
 
 ![Conversion GIF](other/conversion.gif)
 
