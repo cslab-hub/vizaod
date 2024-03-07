@@ -1,6 +1,6 @@
 # VizAOD - Visually assisted Annotation verification and adjudication for Objective Detection
 
-The VizAOD application is an open-source tool designed to verify predicted annotations for semi-supervised object detection visually. The main focus is a simple and intuitive design that makes the process of manual confirmation of predicted labels as easy and fast as possible.
+The VizAOD application is an open-source tool designed to verify predicted annotations for object detection visually. The main focus is a simple and intuitive design that makes the process of manual confirmation of predicted labels as easy and fast as possible.
 
 For demonstration purposes, we are using a subsample of the images and annotations of the [PubLayNet dataset](https://github.com/ibm-aur-nlp/PubLayNet).
 
@@ -24,7 +24,7 @@ By default, the app will run on http://127.0.0.1:8050/. Open this address in you
 
 # Workflow
 
-Since this application is intended to be used as a verification tool for semi-supervised object detection, we assume that you want to verify the annotations that your model predicted in order to make use of approved/discarded annotations for further training steps and for evaluating your model. The workflow with VizAOD is depicted in the figure and description below.
+This application is designed to serve as a tool for verifying annotations in object detection tasks, incorporating a human-in-the-loop (HITL) process. We assume that your goal is to verify the annotations your model predicted in order to use approved or discarded annotations for subsequent training phases and model evaluation. The workflow with VizAOD is depicted in the figure and description below.
 
 1. Use the initial annotations for first model training *initial training step* -- constructing the initial object detection model.
 2. Predict annotations for a subset of the unlabeled images.
